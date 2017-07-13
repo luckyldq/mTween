@@ -232,9 +232,27 @@ function setTransform(el, attr, val){
 /*
 	封装的运动函数，
 	init：{
-		el: ,
-		target:{}
-		
+		el: box,
+		type: "backOut",
+		time: 2000,
+		target: {
+			scale: 2,
+			rotate: 360
+		},
+		callIn: function(){
+			console.log(1);
+		},
+		callBack: function(){
+			mTween({
+				el: this,
+				target: {
+					translateY: 300,
+					scale: 1
+				},
+				time: 1000,
+				type: "bounceOut"
+			});
+		}
 	}
 */
 function mTween(init){
